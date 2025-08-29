@@ -417,3 +417,12 @@ Start with **#1 (Corporate Concentration)** or **#4 (Banking Deep Dive)**. Both 
 - Multiple dataset integration
 
 The key is picking stories that your data can definitively answer, rather than forcing the data to support a predetermined narrative about political impacts.
+
+---
+
+1. how hard is it to be a woman in Peru (violence, trata de personas, missing people, feminicidio) --- David, Pedro
+---
+1. how do the top 10 companies in Peru compare to the bottom 90% - pudding.cool -- David
+2. which sectors report in dollar vs soles, and how has these changes in the last 20 years (covid impact, impeachments, 2008) - pudding.cool
+4. financial health for companies in the smv (como un dashboard), how volatile they are (riskier)
+5. is the public perception of insecurity and the police real?

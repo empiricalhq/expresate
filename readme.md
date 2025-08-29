@@ -28,17 +28,17 @@ Datasets we can use:
 
 ## ODS 8
 
-| Dataset                         | Período       | Contenido                                       | Estado         |
-| ------------------------------- | ------------- | ----------------------------------------------- | -------------- |
-| [Precios de Cotización BVL](https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-de-precios-de-cotizaci%C3%B3n-de-valores-seg%C3%BAn-fecha-de-cotizaci%C3%B3n-en-la-bvl)     | 1996-presente | Precio máximo, mínimo, monto diario             | **Disponible** |
-| [Índices de Renta Variable BVL](https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-de-%C3%ADndices-del-mercado-de-renta-variable-en-el-per%C3%BA-seg%C3%BAn-fecha-del-%C3%ADndice-en-la)   | Actual        | ~10 puntos diarios, lun-vie, composición cambia | **Disponible** |
-| [Empresas Inscritas SMV](https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-de-valores-representativos-de-participaci%C3%B3n-patrimonial-inscritos-en-el-registro)          | 1996-presente | Por razón social/RUC, ~50 registros BCP         | **Disponible** |
-| [Estado de Cambios en Patrimonio](https://www.datosabiertos.gob.pe/dataset/estado-de-cambios-en-el-patrimonio-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la) | Variable      | Análisis crecimiento empresarial, requiere RPJ  | **Disponible** |
-| [Estado de Flujo de Efectivo](https://www.datosabiertos.gob.pe/dataset/estado-de-flujo-de-efectivo-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la-smv)     | 1999-presente | Método directo/indirecto                        | **Disponible** |
-| [Estado de Resultado Integral](https://www.datosabiertos.gob.pe/dataset/estado-de-resultado-integral-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la-smv)    | Variable      | Incluye pagos de deudas                         | **Disponible** |
-| [Estado de Resultados](https://www.datosabiertos.gob.pe/dataset/estado-de-resultados-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la-smv)            | Variable      | Resultados financieros empresariales            | **Disponible** |
-| [Estado de Situación Financiera](https://www.datosabiertos.gob.pe/dataset/estado-de-situaci%C3%B3n-financiera-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la-smv)  | Variable      | Posición financiera empresarial                 | **Disponible** |
-| [Principales Cuentas](https://www.datosabiertos.gob.pe/dataset/principales-cuentas-de-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la-smv)             | Variable      | Datos trimestrales agregados (más certero)      | **Disponible** |
+| Dataset                                                                                                                                                                                         | Período       | Contenido                                       | Estado         |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------------- | -------------- |
+| [Precios de Cotización BVL](https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-de-precios-de-cotizaci%C3%B3n-de-valores-seg%C3%BAn-fecha-de-cotizaci%C3%B3n-en-la-bvl)                   | 1996-presente | Precio máximo, mínimo, monto diario             | **Disponible** |
+| [Índices de Renta Variable BVL](https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-de-%C3%ADndices-del-mercado-de-renta-variable-en-el-per%C3%BA-seg%C3%BAn-fecha-del-%C3%ADndice-en-la) | Actual        | ~10 puntos diarios, lun-vie, composición cambia | **Disponible** |
+| [Empresas Inscritas SMV](https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-de-valores-representativos-de-participaci%C3%B3n-patrimonial-inscritos-en-el-registro)                       | 1996-presente | Por razón social/RUC, ~50 registros BCP         | **Disponible** |
+| [Estado de Cambios en Patrimonio](https://www.datosabiertos.gob.pe/dataset/estado-de-cambios-en-el-patrimonio-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la)                      | Variable      | Análisis crecimiento empresarial, requiere RPJ  | **Disponible** |
+| [Estado de Flujo de Efectivo](https://www.datosabiertos.gob.pe/dataset/estado-de-flujo-de-efectivo-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la-smv)                             | 1999-presente | Método directo/indirecto                        | **Disponible** |
+| [Estado de Resultado Integral](https://www.datosabiertos.gob.pe/dataset/estado-de-resultado-integral-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la-smv)                           | Variable      | Incluye pagos de deudas                         | **Disponible** |
+| [Estado de Resultados](https://www.datosabiertos.gob.pe/dataset/estado-de-resultados-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la-smv)                                           | Variable      | Resultados financieros empresariales            | **Disponible** |
+| [Estado de Situación Financiera](https://www.datosabiertos.gob.pe/dataset/estado-de-situaci%C3%B3n-financiera-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la-smv)                  | Variable      | Posición financiera empresarial                 | **Disponible** |
+| [Principales Cuentas](https://www.datosabiertos.gob.pe/dataset/principales-cuentas-de-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la-smv)                                          | Variable      | Datos trimestrales agregados (más certero)      | **Disponible** |
 
 Algunas ideas que tenemos son:
 

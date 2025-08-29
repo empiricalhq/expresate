@@ -27,3 +27,26 @@ Datasets we can use:
    evidence-based reallocation strategies.
 
 ## ODS 4
+
+Super intendencia del mercado de valores (ver cómo las relaciones internacionales afectan):
+1. Precios de Cotización de Valores
+Esta información, disponible desde 1996, ofrece datos diarios sobre los precios de acciones en la Bolsa de Valores de Lima (BVL). Aunque los datos diarios son limitados (aproximadamente 10 puntos por día), son suficientes para un análisis macro.
+  Detalles de la data:
+    Precios: Incluye precios máximos y mínimos por día.
+    Volumen: Registra el monto total transado en cada jornada.
+    Cobertura: La información abarca de lunes a viernes y los índices de las empresas cambian con el tiempo.
+  Uso para el análisis:
+    Se puede identificar cómo eventos específicos, como la firma de tratados internacionales o crisis políticas, impactan la volatilidad y el volumen de negociación.
+    Comparar el desempeño de distintos sectores (por ejemplo, minería vs. finanzas) para ver cuál es más sensible a ciertos factores externos.
+    El uso de los índices de la BVL es crucial, ya que reflejan el comportamiento de grupos de empresas y pueden ser mejores indicadores del impacto de políticas o eventos.
+2. Información de Empresas Inscritas
+Esta categoría incluye una lista de empresas inscritas en la SMV por razón social. El dataset también menciona la existencia de datos sobre grupos de la clase media peruana invirtiendo en la BVL, con información desde 1996, aunque limitada.
+  Detalles de la data:
+    Empresas: La información se organiza por razón social.
+    Inversionistas: Se menciona un dataset de inversores de la clase media, con aproximadamente 50 registros para el Banco de Crédito del Perú (BCP).
+   Uso para el análisis:
+    Estos datos permiten entender la composición de la base de inversores y cómo la participación local en el mercado evoluciona en respuesta a las condiciones económicas y políticas.
+3. Información Financiera de Empresas Supervisadas
+Esta sección se refiere a los estados financieros de las empresas, que son esenciales para evaluar su salud económica. Se mencionan dos tipos de informes: el Estado de Resultado Integral y las Cuentas Principales.
+  Estado de Resultado Integral (ERI): Este informe muestra las ganancias y pérdidas de una empresa en un periodo, incluyendo ingresos y gastos no operativos. Es útil para analizar el impacto de crisis políticas en la rentabilidad de las empresas. El uso del RPJ (identificador de empresas) es necesario para vincular los datos financieros.
+  Principales Cuentas de Información Financiera: Similar al anterior, pero descrito como un resumen de movimientos y ganancias totales por trimestre, lo que lo hace potencialmente más relevante para un análisis consolidado y preciso. Se puede utilizar para evaluar el crecimiento de las empresas.

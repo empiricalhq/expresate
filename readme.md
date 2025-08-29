@@ -18,6 +18,12 @@ Datasets we can use:
   staffing and distribution of police personnel.
 - [Producción policial](https://www.datosabiertos.gob.pe/dataset/producci%C3%B3n-policial)
 
+Additional datasets:
+- [Violencia Contra la Mujer](https://datosabiertos.gob.pe/dataset/violencia-contra-la-mujer)
+- [Personas desaparecidas](https://datosabiertos.gob.pe/dataset/personas-desaparecidas)
+- [Trata de Personas](https://datosabiertos.gob.pe/dataset/trata-de-personas)
+- [Registros delictivos del Observatorio Regional de Seguridad Ciudadana en la Provincia Constitucional del Callao GORECALLAO](https://www.datosabiertos.gob.pe/dataset/registros-delictivos-del-observatorio-regional-de-seguridad-ciudadana-en-la-provincia)
+
 **What approach we could take**:
 
 1. Compare perceptions of insecurity with actual reported crimes (Lambayeque as

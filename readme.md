@@ -30,7 +30,7 @@ Datasets we can use:
 
 | Dataset                         | Período       | Contenido                                       | Estado         |
 | ------------------------------- | ------------- | ----------------------------------------------- | -------------- |
-| [Precios de Cotización BVL]       | 1996-presente | Precio máximo, mínimo, monto diario             | **Disponible** |
+| [Precios de Cotización BVL]     | 1996-presente | Precio máximo, mínimo, monto diario             | **Disponible** |
 | Índices de Renta Variable BVL   | Actual        | ~10 puntos diarios, lun-vie, composición cambia | **Disponible** |
 | Empresas Inscritas SMV          | 1996-presente | Por razón social/RUC, ~50 registros BCP         | **Disponible** |
 | Estado de Cambios en Patrimonio | Variable      | Análisis crecimiento empresarial, requiere RPJ  | **Disponible** |

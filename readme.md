@@ -26,7 +26,9 @@ Datasets we can use:
 3. Highlight mismatches that may reduce institutional trust and propose
    evidence-based reallocation strategies.
 
-## ODS 4
+## ODS 8
+
+Relacioando al 
 
 Super intendencia del mercado de valores (ver cómo las relaciones internacionales afectan):
 1. Precios de Cotización de Valores
@@ -50,3 +52,42 @@ Esta categoría incluye una lista de empresas inscritas en la SMV por razón soc
 Esta sección se refiere a los estados financieros de las empresas, que son esenciales para evaluar su salud económica. Se mencionan dos tipos de informes: el Estado de Resultado Integral y las Cuentas Principales.
   Estado de Resultado Integral (ERI): Este informe muestra las ganancias y pérdidas de una empresa en un periodo, incluyendo ingresos y gastos no operativos. Es útil para analizar el impacto de crisis políticas en la rentabilidad de las empresas. El uso del RPJ (identificador de empresas) es necesario para vincular los datos financieros.
   Principales Cuentas de Información Financiera: Similar al anterior, pero descrito como un resumen de movimientos y ganancias totales por trimestre, lo que lo hace potencialmente más relevante para un análisis consolidado y preciso. Se puede utilizar para evaluar el crecimiento de las empresas.
+
+
+
+Super intendencia del mercado de valores (ver cómo las relaciones interlacionales afectan)
+	Información de Precios de Cotización de Valores según fecha de cotización en la BVL (pasa piola)
+		data desde el 96 a la fecha, saber precio máximo y mínimo, monto por día
+	Información de Índices del Mercado de Renta Variable en el Perú según fecha del índice en la BVL
+		ver índices da mejores indicadores del impacto de la política
+		La data diaria es limitada, aprox 10 puntos por día
+		comparar cuál es el impacto de diversos sectores
+		data dada de lunes a viernes
+		los indicies cambian por años
+		son indices de un grupo de empresas
+	Información de valores representativos de participación patrimonial inscritos en el Registro Público del Mercado de Valores — RPMV, de la SMV, emitidos por sociedades emisoras (descartado)
+	Información de los valores representativos de deuda inscritos en el Registro Público del Mercado de Valores — RPMV, de la SMV, emitidos por sociedades emisoras (descartado)
+	Información de sanciones de personas jurídicas según fecha de resolución en la SMV (descartado)
+	Información de fondos inscritos en la SMV por Razón Social (descartado)
+		Información de fondos inscritos en la SMV por RUC (descartado)
+	Información de las empresas inscritas en la SMV por Razón Social 
+		datasets de grupos de la clase media peruana invirtiendo en la BVL, hay data desde el 96 pero es limitada, hay unos 50 para el BCP (B80004)
+	Información de las empresas inscritas en la SMV por RUC (ver el anterior)
+	Estado de Cambios en el Patrimonio Información financiera de empresas supervisadas por la SMV
+		analizar crecimiento de empresas. se necesita su RPJ (identificador de empresas)
+	Estado de Flujo de Efectivo Información financiera de empresas supervisadas por la SMV
+		igual al anterior pero de flujo de efectivo
+		incluye data desde el 99
+	Estado de Resultado Integral Información financiera de empresas supervisadas por la SMV
+		ver cómo las crisis politicas afectan la bolsa de valores
+		qué es el resultado integral
+		similar a los anteriores pero incluye pagos de deudas metodo de flujo efectivo es directo e indirecto
+	Estado de Resultados Información financiera de empresas supervisadas por la SMV
+		similar al anterior
+	Estado de Situación financiera Información financiera de empresas supervisadas por la SMV
+		similar al anterior
+	Principales cuentas de Información financiera de empresas supervisadas por la SMV
+		similar al anterior
+		parece ser suma de movimientos y ganancias totales por trimestre, parece más certero y relevante
+Ver cómo, por ejemplo, la apertura de puertos marítimos afectan en la bolsa de valores
+De manera general, evaluar qué factores pueden influenciar en ella, sean políticos, tratados o convenios internacionales, etc

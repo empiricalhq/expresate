@@ -28,66 +28,25 @@ Datasets we can use:
 
 ## ODS 8
 
-Relacioando al 
+| Dataset | Período | Contenido | Estado |
+|---------|---------|-----------|--------|
+| Precios de Cotización BVL | 1996-presente | Precio máximo, mínimo, monto diario | **Disponible** |
+| Índices de Renta Variable BVL | Actual | ~10 puntos diarios, lun-vie, composición cambia | **Disponible** |
+| Empresas Inscritas SMV | 1996-presente | Por razón social/RUC, ~50 registros BCP | **Disponible** |
+| Estado de Cambios en Patrimonio | Variable | Análisis crecimiento empresarial, requiere RPJ | **Disponible** |
+| Estado de Flujo de Efectivo | 1999-presente | Método directo/indirecto | **Disponible** |
+| Estado de Resultado Integral | Variable | Incluye pagos de deudas | **Disponible** |
+| Estado de Resultados | Variable | Resultados financieros empresariales | **Disponible** |
+| Estado de Situación Financiera | Variable | Posición financiera empresarial | **Disponible** |
+| Principales Cuentas | Variable | Datos trimestrales agregados (más certero) | **Disponible** |
 
-Super intendencia del mercado de valores (ver cómo las relaciones internacionales afectan):
-1. Precios de Cotización de Valores
-Esta información, disponible desde 1996, ofrece datos diarios sobre los precios de acciones en la Bolsa de Valores de Lima (BVL). Aunque los datos diarios son limitados (aproximadamente 10 puntos por día), son suficientes para un análisis macro.
-  Detalles de la data:
-    Precios: Incluye precios máximos y mínimos por día.
-    Volumen: Registra el monto total transado en cada jornada.
-    Cobertura: La información abarca de lunes a viernes y los índices de las empresas cambian con el tiempo.
-  Uso para el análisis:
-    Se puede identificar cómo eventos específicos, como la firma de tratados internacionales o crisis políticas, impactan la volatilidad y el volumen de negociación.
-    Comparar el desempeño de distintos sectores (por ejemplo, minería vs. finanzas) para ver cuál es más sensible a ciertos factores externos.
-    El uso de los índices de la BVL es crucial, ya que reflejan el comportamiento de grupos de empresas y pueden ser mejores indicadores del impacto de políticas o eventos.
-2. Información de Empresas Inscritas
-Esta categoría incluye una lista de empresas inscritas en la SMV por razón social. El dataset también menciona la existencia de datos sobre grupos de la clase media peruana invirtiendo en la BVL, con información desde 1996, aunque limitada.
-  Detalles de la data:
-    Empresas: La información se organiza por razón social.
-    Inversionistas: Se menciona un dataset de inversores de la clase media, con aproximadamente 50 registros para el Banco de Crédito del Perú (BCP).
-   Uso para el análisis:
-    Estos datos permiten entender la composición de la base de inversores y cómo la participación local en el mercado evoluciona en respuesta a las condiciones económicas y políticas.
-3. Información Financiera de Empresas Supervisadas
-Esta sección se refiere a los estados financieros de las empresas, que son esenciales para evaluar su salud económica. Se mencionan dos tipos de informes: el Estado de Resultado Integral y las Cuentas Principales.
-  Estado de Resultado Integral (ERI): Este informe muestra las ganancias y pérdidas de una empresa en un periodo, incluyendo ingresos y gastos no operativos. Es útil para analizar el impacto de crisis políticas en la rentabilidad de las empresas. El uso del RPJ (identificador de empresas) es necesario para vincular los datos financieros.
-  Principales Cuentas de Información Financiera: Similar al anterior, pero descrito como un resumen de movimientos y ganancias totales por trimestre, lo que lo hace potencialmente más relevante para un análisis consolidado y preciso. Se puede utilizar para evaluar el crecimiento de las empresas.
+Algunas ideas que tenemos son:
 
-
-
-Super intendencia del mercado de valores (ver cómo las relaciones interlacionales afectan)
-	Información de Precios de Cotización de Valores según fecha de cotización en la BVL (pasa piola)
-		data desde el 96 a la fecha, saber precio máximo y mínimo, monto por día
-	Información de Índices del Mercado de Renta Variable en el Perú según fecha del índice en la BVL
-		ver índices da mejores indicadores del impacto de la política
-		La data diaria es limitada, aprox 10 puntos por día
-		comparar cuál es el impacto de diversos sectores
-		data dada de lunes a viernes
-		los indicies cambian por años
-		son indices de un grupo de empresas
-	Información de valores representativos de participación patrimonial inscritos en el Registro Público del Mercado de Valores — RPMV, de la SMV, emitidos por sociedades emisoras (descartado)
-	Información de los valores representativos de deuda inscritos en el Registro Público del Mercado de Valores — RPMV, de la SMV, emitidos por sociedades emisoras (descartado)
-	Información de sanciones de personas jurídicas según fecha de resolución en la SMV (descartado)
-	Información de fondos inscritos en la SMV por Razón Social (descartado)
-		Información de fondos inscritos en la SMV por RUC (descartado)
-	Información de las empresas inscritas en la SMV por Razón Social 
-		datasets de grupos de la clase media peruana invirtiendo en la BVL, hay data desde el 96 pero es limitada, hay unos 50 para el BCP (B80004)
-	Información de las empresas inscritas en la SMV por RUC (ver el anterior)
-	Estado de Cambios en el Patrimonio Información financiera de empresas supervisadas por la SMV
-		analizar crecimiento de empresas. se necesita su RPJ (identificador de empresas)
-	Estado de Flujo de Efectivo Información financiera de empresas supervisadas por la SMV
-		igual al anterior pero de flujo de efectivo
-		incluye data desde el 99
-	Estado de Resultado Integral Información financiera de empresas supervisadas por la SMV
-		ver cómo las crisis politicas afectan la bolsa de valores
-		qué es el resultado integral
-		similar a los anteriores pero incluye pagos de deudas metodo de flujo efectivo es directo e indirecto
-	Estado de Resultados Información financiera de empresas supervisadas por la SMV
-		similar al anterior
-	Estado de Situación financiera Información financiera de empresas supervisadas por la SMV
-		similar al anterior
-	Principales cuentas de Información financiera de empresas supervisadas por la SMV
-		similar al anterior
-		parece ser suma de movimientos y ganancias totales por trimestre, parece más certero y relevante
-Ver cómo, por ejemplo, la apertura de puertos marítimos afectan en la bolsa de valores
-De manera general, evaluar qué factores pueden influenciar en ella, sean políticos, tratados o convenios internacionales, etc
+| Prioridad | Proyecto | Descripción | Datasets Principales |
+|-----------|----------|-------------|---------------------|
+| **Alta** | Impacto de Crisis Políticas | Correlacionar eventos políticos con fluctuaciones en estado de resultado integral | Resultado Integral + Precios Cotización |
+| **Alta** | Análisis de Sectores por Índices | Comparar impacto de diversos sectores usando índices de renta variable | Índices Renta Variable + Principales Cuentas |
+| **Media** | Efectos de Infraestructura | Evaluar cómo apertura de puertos marítimos afecta la bolsa | Precios Cotización + Estado Flujo Efectivo |
+| **Media** | Crecimiento Empresarial | Analizar trayectoria de crecimiento usando cambios patrimoniales | Cambios Patrimonio + Principales Cuentas |
+| **Media** | Inversores Clase Media | Estudiar patrones de inversión de clase media peruana en BVL | Empresas Inscritas + Precios Cotización |
+| **Baja** | Relaciones Internacionales | Evaluar factores políticos, tratados y convenios internacionales | Todos los estados financieros |

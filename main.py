@@ -5,7 +5,7 @@ import io
 import re
 import openpyxl
 import csv
-
+import json
 
 def get_columns_from_dictionary(file_url):
     """
@@ -15,178 +15,153 @@ def get_columns_from_dictionary(file_url):
     try:
         response = requests.get(file_url, timeout=20)
         response.raise_for_status()
-
         file_content = io.BytesIO(response.content)
-
         workbook = openpyxl.load_workbook(file_content)
         sheet = workbook.active
-
         start_row = 0
         for row_num, row in enumerate(sheet.iter_rows(), 1):
             if row[0].value and row[1].value:
                 start_row = row_num
                 break
-
         if start_row == 0:
-            print(
-                f"  [Warning] Could not find a plausible data table in dictionary: {file_url}"
-            )
             return None
-
-        print(
-            f"  [Info] Found table header at row {start_row}. Reading data from that point."
-        )
-
         file_content.seek(0)
-        df = pd.read_excel(file_content, engine="openpyxl", skiprows=start_row - 1)
-
+        df = pd.read_excel(file_content, engine='openpyxl', skiprows=start_row - 1)
         df = df.dropna(subset=[df.columns[0]])
         if df.empty:
             return None
-
-        columns = dict(zip(df.iloc[:, 0].astype(str), df.iloc[:, 1].astype(str)))
-        return columns
-
+        return dict(zip(df.iloc[:, 0].astype(str), df.iloc[:, 1].astype(str)))
     except Exception as e:
         print(f"  [Error] Failed to process Excel dictionary {file_url}: {e}")
         return None
-
 
 def get_columns_from_csv(file_url):
     """
     Downloads a CSV file, automatically detects the delimiter, reads only the header,
     and returns column names.
     """
-    columns = {}
     try:
         response = requests.get(file_url, timeout=20)
         response.raise_for_status()
-
-        sample = response.text[:1024]
+        sample = response.text[:2048]
+        delimiter = ','
         try:
-            dialect = csv.Sniffer().sniff(sample, delimiters=",;")
+            dialect = csv.Sniffer().sniff(sample, delimiters=',;')
             delimiter = dialect.delimiter
-            print(f"  [Info] Sniffer detected delimiter: '{delimiter}'")
         except csv.Error:
-            print("  [Warning] CSV Sniffer failed. Falling back to comma delimiter.")
-            delimiter = ","
-
-        file_content_str = response.text
-        file_content = io.StringIO(file_content_str)
-
-        # Read only the first row to get the header using the detected delimiter
-        df = pd.read_csv(file_content, nrows=0, sep=delimiter)
-
-        columns = {col: "N/A" for col in df.columns}
-
-    except UnicodeDecodeError:
-        try:
-            file_content = io.StringIO(response.content.decode("latin-1"))
-            df = pd.read_csv(file_content, nrows=0, sep=delimiter)
-            columns = {col: "N/A" for col in df.columns}
-        except Exception as e:
-            print(
-                f"  [Error] Failed to read CSV header with fallback encoding for {file_url}: {e}"
-            )
-
+            pass
+        df = pd.read_csv(io.StringIO(response.text), nrows=0, sep=delimiter)
+        return {col.strip(): "N/A" for col in df.columns}
     except Exception as e:
         print(f"  [Error] Failed to read CSV header for {file_url}: {e}")
+        return {}
 
-    return columns
+def scrape_metadata_table(soup):
+    """Scrapes the 'Dataset Info' table into a dictionary."""
+    metadata = {}
+    table = soup.find('section', class_='group_additional')
+    if not table:
+        return metadata
+
+    for row in table.find_all('tr'):
+        header = row.find('th')
+        value = row.find('td')
+        if header and value:
+            metadata[header.get_text(strip=True)] = value.get_text(strip=True)
+
+    return metadata
 
 
-def scrape_dataset_details(page_url):
+def scrape_page_details(page_url, hackathon_title):
     """
-    Scrapes a single dataset page to find downloadable resources and their columns.
+    Scrapes a single detail page and returns ONE dictionary for the whole page,
+    with resources nested inside.
     """
-    print(f"\n-> Visiting page: {page_url}")
+    print(f"\n-> Processing Page: {page_url}")
     try:
         response = requests.get(page_url, timeout=10)
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         print(f"  [Error] Could not fetch page {page_url}: {e}")
-        return []
+        return None
 
-    soup = BeautifulSoup(response.content, "html.parser")
+    soup = BeautifulSoup(response.content, 'html.parser')
 
-    resources_div = soup.find("div", id="data-and-resources")
+    # Scrape main page information
+    page_title = soup.find('h1', class_='page-header').get_text(strip=True) if soup.find('h1', class_='page-header') else hackathon_title
+    description_div = soup.find('div', class_='field-name-body')
+    description = description_div.get_text(strip=True) if description_div else "No description available."
+    metadata = scrape_metadata_table(soup)
+
+    # Scrape all downloadable resources on the page
+    resources_div = soup.find('div', id='data-and-resources')
     if not resources_div:
-        print("  [Info] No 'data-and-resources' section found.")
-        return []
+        return None
 
-    resource_list_items = resources_div.find_all("li")
+    resource_list_items = resources_div.find_all('li')
 
     all_resources = []
     dictionary_url = None
 
+    # First pass: identify resources and find the dictionary
     for item in resource_list_items:
-        link_tag = item.find("a", class_="heading")
-        download_tag = item.find("a", class_="data-link")
-        format_tag = item.find("span", class_="format-label")
+        link_tag = item.find('a', class_='heading')
+        download_tag = item.find('a', class_='data-link')
+        format_tag = item.find('span', class_='format-label')
 
         if not all([link_tag, download_tag, format_tag]):
             continue
 
         title = link_tag.get_text(strip=True)
-        download_url = download_tag["href"]
-        file_format = format_tag.get("data-original-title", "").lower()
+        download_url = download_tag['href']
+        file_format = format_tag.get('data-original-title', '').lower()
 
-        if download_url.lower().endswith((".xlsx", ".xls")):
-            file_format = "xlsx"  # Standardize to xlsx for our logic
+        if download_url.lower().endswith(('.xlsx', '.xls')):
+            file_format = 'xlsx'
 
-        resource_info = {
-            "dataset_title": title,
-            "dataset_download_link": download_url,
-            "dataset_format": file_format,
-            "columns": "Not a data file",
-        }
+        resource_info = {'title': title, 'download_link': download_url, 'format': file_format}
         all_resources.append(resource_info)
 
-        if file_format in ["xlsx", ".xlsx", "excel"] and re.search(
-            r"diccionario|metadatos", title, re.IGNORECASE
-        ):
+        if file_format in ['xlsx', '.xlsx', 'excel'] and re.search(r'diccionario|metadatos', title, re.IGNORECASE):
             dictionary_url = download_url
             print(f"  [Info] Found data dictionary: {title}")
 
-    dataset_columns = None
+    # Second pass: get column info for each resource
+    dataset_columns_from_dict = None
     if dictionary_url:
-        dataset_columns = get_columns_from_dictionary(dictionary_url)
+        dataset_columns_from_dict = get_columns_from_dictionary(dictionary_url)
 
-    final_resource_list = []
     for resource in all_resources:
-        if resource["dataset_format"] == "csv":
-            if dataset_columns:
-                column_str = " | ".join(
-                    [f"{k}: {v}" for k, v in dataset_columns.items()]
-                )
-                resource["columns"] = column_str
+        if resource['format'] == 'csv':
+            if dataset_columns_from_dict:
+                resource['columns'] = dataset_columns_from_dict
             else:
-                print(
-                    f"  [Info] No dictionary found/parsed. Reading header from: {resource['dataset_title']}"
-                )
-                csv_columns = get_columns_from_csv(resource["dataset_download_link"])
-                column_str = " | ".join(
-                    [f"{k.strip()}: {v}" for k, v in csv_columns.items()]
-                )
-                resource["columns"] = (
-                    column_str if column_str else "Could not read header"
-                )
+                print(f"  [Info] No dictionary found. Reading header from CSV: {resource['title']}")
+                resource['columns'] = get_columns_from_csv(resource['download_link'])
+        else:
+            resource['columns'] = None
 
-        final_resource_list.append(resource)
 
-    return final_resource_list
+    page_data = {
+        'source_title': hackathon_title,
+        'page_url': page_url,
+        'page_title': page_title,
+        'description': description,
+        'metadata': metadata,
+        'resources': all_resources
+    }
 
+    return page_data
 
 def scrape_hackathon_listings(start_url):
     """
     Main function to scrape all pages of hackathon listings and then
     scrape the details for each entry.
     """
-    all_datasets = []
+    all_pages_data = []
     current_url = start_url
 
     while current_url:
-        # current_page += 1
         print(f"\nScraping listing page: {current_url}")
         try:
             response = requests.get(current_url)
@@ -195,57 +170,37 @@ def scrape_hackathon_listings(start_url):
             print(f"Error fetching listing URL: {e}")
             break
 
-        soup = BeautifulSoup(response.content, "html.parser")
-        content = soup.find("div", class_="view-content")
+        soup = BeautifulSoup(response.content, 'html.parser')
+        content = soup.find('div', class_='view-content')
         if not content:
-            print("Could not find the main content area on the listing page.")
             break
 
-        articles = content.find_all("article", class_="node-search-result")
-
+        articles = content.find_all('article', class_='node-search-result')
         for article in articles:
-            title_element = article.find("h2", class_="node-title")
+            title_element = article.find('h2', class_='node-title')
             if title_element and title_element.a:
                 hackathon_title = title_element.a.get_text(strip=True)
-                hackathon_link = (
-                    "https://datosabiertos.gob.pe" + title_element.a["href"]
-                )
+                hackathon_link = "https://datosabiertos.gob.pe" + title_element.a['href']
 
-                datasets_info = scrape_dataset_details(hackathon_link)
+                page_details = scrape_page_details(hackathon_link, hackathon_title)
+                if page_details:
+                    all_pages_data.append(page_details)
 
-                for dataset in datasets_info:
-                    dataset["hackathon_title"] = hackathon_title
-                    dataset["hackathon_link"] = hackathon_link
-                    all_datasets.append(dataset)
+        next_page_element = soup.find('li', class_='pager-next')
+        current_url = "https://datosabiertos.gob.pe" + next_page_element.a['href'] if next_page_element and next_page_element.a else None
 
-        next_page_element = soup.find("li", class_="pager-next")
-        if next_page_element and next_page_element.a:
-            current_url = "https://datosabiertos.gob.pe" + next_page_element.a["href"]
-        else:
-            current_url = None
-
-    return all_datasets
+    return all_pages_data
 
 
-if __name__ == "__main__":
-    START_URL = "https://datosabiertos.gob.pe/search/field_topic/educaci%C3%B3n-28/field_topic/datat%C3%B3n-2025-2077?sort_by=changed"
+if __name__ == '__main__':
+    START_URL = 'https://datosabiertos.gob.pe/search/field_topic/educaci%C3%B3n-28/field_topic/datat%C3%B3n-2025-2077?sort_by=changed'
 
     scraped_data = scrape_hackathon_listings(START_URL)
 
     if scraped_data:
-        df = pd.DataFrame(scraped_data)
-        df = df[
-            [
-                "hackathon_title",
-                "hackathon_link",
-                "dataset_title",
-                "dataset_download_link",
-                "dataset_format",
-                "columns",
-            ]
-        ]
-
-        df.to_csv("hackathons.csv", index=False, encoding="utf-8-sig")
-        print("\nScraping complete. Data saved to hackathons.csv")
+        output_filename = 'hackathons.json'
+        with open(output_filename, 'w', encoding='utf-8') as f:
+            json.dump(scraped_data, f, ensure_ascii=False, indent=4)
+        print(f"\n\nScraping complete. All data saved to {output_filename}")
     else:
         print("\nNo data was scraped.")

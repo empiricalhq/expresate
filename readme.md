@@ -321,3 +321,99 @@ Algunas ideas que tenemos son:
 | **Media** | Crecimiento Empresarial          | Analizar trayectoria de crecimiento usando cambios patrimoniales                  | Cambios Patrimonio + Principales Cuentas     |
 | **Media** | Inversores Clase Media           | Estudiar patrones de inversión de clase media peruana en BVL                      | Empresas Inscritas + Precios Cotización      |
 | **Baja**  | Relaciones Internacionales       | Evaluar factores políticos, tratados y convenios internacionales                  | Todos los estados financieros                |
+
+---
+
+Looking at your datasets objectively, here are some compelling stories you could tell that actually leverage the data's strengths:
+
+## **High-Impact Stories**
+
+**1. "The Hidden Giants: Peru's Corporate Concentration Crisis"**
+- Use Dataset #9 (Principales Cuentas) to show how market concentration has evolved
+- Combine with Dataset #3 (Empresas Inscritas) to track new vs. established players
+- **Story angle**: Are Peru's markets becoming oligopolistic? How do the top 10 companies compare to the bottom 90%?
+- **Visual power**: Clear charts showing wealth concentration over time
+
+**2. "The Great Dollarization: Currency Preferences in Peruvian Business"**
+- Datasets #4-8 all have currency fields (Soles vs. Dollars)
+- **Story angle**: Which sectors report in dollars vs. soles, and how has this changed?
+- **Why it matters**: Reveals corporate currency risk strategies and economic sovereignty issues
+- **Unique insight**: You might discover sectors that switched reporting currencies during crises
+
+**3. "Quarterly vs. Annual: The Transparency Gap"**
+- Compare companies that report quarterly vs. only annually across all financial datasets
+- **Story angle**: Who's hiding behind minimal disclosure requirements?
+- **Public interest**: Transparency is a major governance issue in Peru
+- **Data advantage**: You can quantify transparency patterns across sectors
+
+## **Sector-Specific Deep Dives**
+
+**4. "Banking Empire: How Peru's Financial Giants Really Make Money"**
+- Use all financial statement datasets focused on banks (TipoEmpresa = "bancos")
+- **Story angle**: Break down revenue sources, profit margins, and growth strategies
+- **Why compelling**: Everyone uses banks, few understand how they work
+- **Data richness**: Banking data is typically the most complete in your datasets
+
+**5. "The Mining Money Trail"**
+- Focus on mining companies across all datasets
+- **Story angle**: How do commodity cycles affect corporate behavior?
+- **Combine with**: Dataset #1 (stock prices) for mining companies during commodity booms/busts
+- **Relevance**: Mining is Peru's economic backbone but poorly understood by general public
+
+## **Financial Health Stories**
+
+**6. "Zombie Companies: The Walking Dead of Lima's Stock Exchange"**
+- Use Dataset #9 to identify companies with negative equity or suspicious financials
+- **Story angle**: How many listed companies are actually financially viable?
+- **Public interest**: Retail investors need this information
+- **Methodology**: Create a "financial health score" using multiple indicators
+
+**7. "The Cash Flow Mirage"**
+- Use Dataset #5 (Cash Flow) vs Dataset #7 (Income Statement)
+- **Story angle**: Which companies report profits but burn cash?
+- **Why important**: Classic red flag for investors and creditors
+- **Visual appeal**: Scatter plots showing profit vs. cash generation
+
+## **Temporal Analysis**
+
+**8. "The 2008 Survivors: What Makes Companies Crisis-Proof?"**
+- Track companies that survived 2008-2009 vs. those that didn't
+- Use all datasets to build comprehensive survival profiles
+- **Story angle**: Lessons from corporate Darwinism
+- **Practical value**: Investment guidance for future crises
+
+**9. "Growth vs. Leverage: The Peruvian Corporate Dilemma"**
+- Use Dataset #4 (Patrimonio) and #8 (Balance Sheet) over time
+- **Story angle**: How do Peruvian companies finance growth?
+- **Economic insight**: Reveals capital market efficiency and corporate strategy patterns
+
+## **Governance & Structure Stories**
+
+**10. "The Consolidation Game: Individual vs. Group Reporting Patterns"**
+- All datasets distinguish individual vs. consolidated reporting
+- **Story angle**: Which companies use complex corporate structures and why?
+- **Relevance**: Corporate transparency and tax optimization stories
+
+**11. "The Registration Rush: SMV Listing Patterns Over Time"**
+- Dataset #3 shows when companies registered with SMV
+- **Story angle**: What drives companies to go public in Peru?
+- **Economic context**: Correlate with economic cycles, regulatory changes
+
+## **Why These Work Better**
+
+1. **Data-driven**: Each story emerges from what the data actually contains
+2. **Verifiable**: You can prove your findings with the datasets
+3. **Public interest**: These stories matter to investors, policymakers, and citizens
+4. **Uniquely accessible**: Only someone with this SMV data could tell these stories
+5. **Actionable**: Readers can use these insights for investment/policy decisions
+
+## **Execution Recommendation**
+
+Start with **#1 (Corporate Concentration)** or **#4 (Banking Deep Dive)**. Both offer:
+- Clear narrative arc
+- Strong visual potential
+- Broad public interest
+- Manageable scope
+- Multiple dataset integration
+
+The key is picking stories that your data can definitively answer, rather than forcing the data to support a predetermined narrative about political impacts.

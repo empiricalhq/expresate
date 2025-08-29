@@ -122,7 +122,7 @@ def scrape_page_details(page_url, hackathon_title):
         resource_info = {
             # 'title': title,
             'download_link': download_url,
-            # 'format': file_format
+            'format': file_format
         }
         all_resources.append(resource_info)
 
@@ -140,7 +140,7 @@ def scrape_page_details(page_url, hackathon_title):
             if dataset_columns_from_dict:
                 resource['columns'] = dataset_columns_from_dict
             else:
-                print(f"  [Info] No dictionary found. Reading header from CSV: {resource['title']}")
+                # print(f"  [Info] No dictionary found. Reading header from CSV: {resource['title']}")
                 resource['columns'] = get_columns_from_csv(resource['download_link'])
         else:
             resource['columns'] = None

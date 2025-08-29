@@ -119,7 +119,11 @@ def scrape_page_details(page_url, hackathon_title):
         if download_url.lower().endswith(('.xlsx', '.xls')):
             file_format = 'xlsx'
 
-        resource_info = {'title': title, 'download_link': download_url, 'format': file_format}
+        resource_info = {
+            # 'title': title,
+            'download_link': download_url,
+            # 'format': file_format
+        }
         all_resources.append(resource_info)
 
         if file_format in ['xlsx', '.xlsx', 'excel'] and re.search(r'diccionario|metadatos', title, re.IGNORECASE):

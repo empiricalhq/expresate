@@ -88,10 +88,10 @@ def scrape_page_details(page_url, hackathon_title):
     soup = BeautifulSoup(response.content, 'html.parser')
 
     # Scrape main page information
-    page_title = soup.find('h1', class_='page-header').get_text(strip=True) if soup.find('h1', class_='page-header') else hackathon_title
+    soup.find('h1', class_='page-header').get_text(strip=True) if soup.find('h1', class_='page-header') else hackathon_title
     description_div = soup.find('div', class_='field-name-body')
-    description = description_div.get_text(strip=True) if description_div else "No description available."
-    metadata = scrape_metadata_table(soup)
+    description_div.get_text(strip=True) if description_div else "No description available."
+    scrape_metadata_table(soup)
 
     # Scrape all downloadable resources on the page
     resources_div = soup.find('div', id='data-and-resources')
@@ -145,9 +145,9 @@ def scrape_page_details(page_url, hackathon_title):
     page_data = {
         'source_title': hackathon_title,
         'page_url': page_url,
-        'page_title': page_title,
-        'description': description,
-        'metadata': metadata,
+        # 'page_title': page_title,
+        # 'description': description,
+        # 'metadata': metadata,
         'resources': all_resources
     }
 

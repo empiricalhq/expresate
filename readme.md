@@ -42,7 +42,7 @@ Datasets we can use:
 
 Algunas ideas que tenemos son:
 
-| Prioridad | Proyecto                         | Descripción                                                                       | Datasets Principales                         |
+| Prioridad | Proyecto                         | Descripción                                                                       | Datasets principales                         |
 | --------- | -------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------- |
 | **Alta**  | Impacto de Crisis Políticas      | Correlacionar eventos políticos con fluctuaciones en estado de resultado integral | Resultado Integral + Precios Cotización      |
 | **Alta**  | Análisis de Sectores por Índices | Comparar impacto de diversos sectores usando índices de renta variable            | Índices Renta Variable + Principales Cuentas |

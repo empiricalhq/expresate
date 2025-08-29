@@ -28,25 +28,25 @@ Datasets we can use:
 
 ## ODS 8
 
-| Dataset | Período | Contenido | Estado |
-|---------|---------|-----------|--------|
-| Precios de Cotización BVL | 1996-presente | Precio máximo, mínimo, monto diario | **Disponible** |
-| Índices de Renta Variable BVL | Actual | ~10 puntos diarios, lun-vie, composición cambia | **Disponible** |
-| Empresas Inscritas SMV | 1996-presente | Por razón social/RUC, ~50 registros BCP | **Disponible** |
-| Estado de Cambios en Patrimonio | Variable | Análisis crecimiento empresarial, requiere RPJ | **Disponible** |
-| Estado de Flujo de Efectivo | 1999-presente | Método directo/indirecto | **Disponible** |
-| Estado de Resultado Integral | Variable | Incluye pagos de deudas | **Disponible** |
-| Estado de Resultados | Variable | Resultados financieros empresariales | **Disponible** |
-| Estado de Situación Financiera | Variable | Posición financiera empresarial | **Disponible** |
-| Principales Cuentas | Variable | Datos trimestrales agregados (más certero) | **Disponible** |
+| Dataset                         | Período       | Contenido                                       | Estado         |
+| ------------------------------- | ------------- | ----------------------------------------------- | -------------- |
+| [Precios de Cotización BVL]       | 1996-presente | Precio máximo, mínimo, monto diario             | **Disponible** |
+| Índices de Renta Variable BVL   | Actual        | ~10 puntos diarios, lun-vie, composición cambia | **Disponible** |
+| Empresas Inscritas SMV          | 1996-presente | Por razón social/RUC, ~50 registros BCP         | **Disponible** |
+| Estado de Cambios en Patrimonio | Variable      | Análisis crecimiento empresarial, requiere RPJ  | **Disponible** |
+| Estado de Flujo de Efectivo     | 1999-presente | Método directo/indirecto                        | **Disponible** |
+| Estado de Resultado Integral    | Variable      | Incluye pagos de deudas                         | **Disponible** |
+| Estado de Resultados            | Variable      | Resultados financieros empresariales            | **Disponible** |
+| Estado de Situación Financiera  | Variable      | Posición financiera empresarial                 | **Disponible** |
+| Principales Cuentas             | Variable      | Datos trimestrales agregados (más certero)      | **Disponible** |
 
 Algunas ideas que tenemos son:
 
-| Prioridad | Proyecto | Descripción | Datasets Principales |
-|-----------|----------|-------------|---------------------|
-| **Alta** | Impacto de Crisis Políticas | Correlacionar eventos políticos con fluctuaciones en estado de resultado integral | Resultado Integral + Precios Cotización |
-| **Alta** | Análisis de Sectores por Índices | Comparar impacto de diversos sectores usando índices de renta variable | Índices Renta Variable + Principales Cuentas |
-| **Media** | Efectos de Infraestructura | Evaluar cómo apertura de puertos marítimos afecta la bolsa | Precios Cotización + Estado Flujo Efectivo |
-| **Media** | Crecimiento Empresarial | Analizar trayectoria de crecimiento usando cambios patrimoniales | Cambios Patrimonio + Principales Cuentas |
-| **Media** | Inversores Clase Media | Estudiar patrones de inversión de clase media peruana en BVL | Empresas Inscritas + Precios Cotización |
-| **Baja** | Relaciones Internacionales | Evaluar factores políticos, tratados y convenios internacionales | Todos los estados financieros |
+| Prioridad | Proyecto                         | Descripción                                                                       | Datasets Principales                         |
+| --------- | -------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------- |
+| **Alta**  | Impacto de Crisis Políticas      | Correlacionar eventos políticos con fluctuaciones en estado de resultado integral | Resultado Integral + Precios Cotización      |
+| **Alta**  | Análisis de Sectores por Índices | Comparar impacto de diversos sectores usando índices de renta variable            | Índices Renta Variable + Principales Cuentas |
+| **Media** | Efectos de Infraestructura       | Evaluar cómo apertura de puertos marítimos afecta la bolsa                        | Precios Cotización + Estado Flujo Efectivo   |
+| **Media** | Crecimiento Empresarial          | Analizar trayectoria de crecimiento usando cambios patrimoniales                  | Cambios Patrimonio + Principales Cuentas     |
+| **Media** | Inversores Clase Media           | Estudiar patrones de inversión de clase media peruana en BVL                      | Empresas Inscritas + Precios Cotización      |
+| **Baja**  | Relaciones Internacionales       | Evaluar factores políticos, tratados y convenios internacionales                  | Todos los estados financieros                |

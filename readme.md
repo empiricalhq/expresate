@@ -16,6 +16,7 @@ Datasets we can use:
   – national-level police reports.
 - [Personal policial](https://datosabiertos.gob.pe/dataset/personal-policial) –
   staffing and distribution of police personnel.
+- [Producción policial](https://www.datosabiertos.gob.pe/dataset/producci%C3%B3n-policial)
 
 **What approach we could take**:
 

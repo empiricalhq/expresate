@@ -424,5 +424,8 @@ The key is picking stories that your data can definitively answer, rather than f
 ---
 1. how do the top 10 companies in Peru compare to the bottom 90% - pudding.cool -- David
 2. which sectors report in dollar vs soles, and how has these changes in the last 20 years (covid impact, impeachments, 2008) - pudding.cool
-4. financial health for companies in the smv (como un dashboard), how volatile they are (riskier)
-5. is the public perception of insecurity and the police real?
+3. app: sacar cita en una posta
+4. app: para tracker la ubicacion de los camiones y basura
+5. app: para uso interno de las gerencias de seguridad de las municipalidades para poder contar al oficial mas cercano en cuanto una queja se ha realizado
+6. financial health for companies in the smv (como un dashboard), how volatile they are (riskier)
+7. is the public perception of insecurity and the police real?

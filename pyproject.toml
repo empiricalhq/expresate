@@ -12,6 +12,4 @@ dependencies = [
 ]
 
 [tool.uv.workspace]
-members = [
-    "policia",
-]
+members = ["smv", "policia"]

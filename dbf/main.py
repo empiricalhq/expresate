@@ -32,7 +32,7 @@ def _():
 @app.cell
 def _(gpd):
     dbf_path = "dbf/test.dbf"
-    
+
     # Read DBF and convert to CSV
     df = gpd.read_file(dbf_path)
     df = df.drop(columns="geometry", errors="ignore")
@@ -98,11 +98,6 @@ def _(merged):
     ax.set_axis_off()
 
     ax
-    return
-
-
-@app.cell
-def _():
     return
 
 

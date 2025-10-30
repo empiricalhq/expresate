@@ -3,7 +3,7 @@ name = "dbf"
 version = "0.1.0"
 dependencies = [
     "geopandas>=1.1.1",
-    "marimo>=0.17.2",
+    "marimo>=0.17.4",
     "matplotlib>=3.10.7",
     "simpledbf>=0.2.6",
 ]
